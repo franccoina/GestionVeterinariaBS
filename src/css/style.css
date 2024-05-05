@@ -1,0 +1,134 @@
+/* David Francisco Blandón Mena
+Clan Gates, RIWI
+03.05.2024*/
+
+/* --------------------------------------- Comentarios del autor ----------------------------------------- */
+
+/* NOTA: Como se estabeció, si veiamos la necesidad de usar CSS debiamos justificarlo.
+He aqui las razones:
+
+Estos estilos de CSS se tuvieron que utilizar para el formulario de Registro, ya que
+hacerlo con Bootstrap era aparatoso, engorroso y practicamente implicaba hacerlo desde
+el principio. Además, animaciones como el transform utilizado no se habrian podido agregar
+si no se hubiera rcurrido a CSS. 
+
+Por ello, se penso en una estrategia mas enriquecedora para el proyecto, ayudandonos de otra
+plataforma para facilitar este tipo de necesidades (https://uiverse.io/). No obstante, es 
+sabido por el estudiante que con unos cuando 'd-flex' y clases de BS, se podria haber hecho. 
+
+Agradezco la comprension... */
+
+/* --------------------------------------- Stylesheet --------------------------------------------------- */
+
+/* Import con hoja 'normalize', que facilita compatibilidad de nuestro proyecto*/
+
+@import url(./normalize.css);
+
+/* Estilos usados especificamente en el formulario de registro*/
+
+#form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 550px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.message,
+.signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a {
+  color: royalblue;
+}
+
+.signin a:hover {
+  text-decoration: underline royalblue;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input+span {
+  position: absolute;
+  padding: 3px;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.8em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown+span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus+span,
+.form label .input:valid+span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input:valid+span {
+  color: green;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+}
+
+.submit:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
